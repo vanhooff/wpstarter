@@ -119,4 +119,11 @@ else
     echo "Warning: npm is not installed"
 fi
 
+# if theme name is not wpstarter, remove the install script
+if [ "$theme_name_lower" != "wpstarter" ]; then
+    rm install.sh
+    echo "Removed install.sh for security reasons"
+fi
+
 echo "Setup complete! Your theme is ready to use."
+
