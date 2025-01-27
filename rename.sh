@@ -19,6 +19,10 @@ totitle() {
 echo "Enter your theme name (e.g. My Awesome Theme):"
 read theme_name
 
+# Ask for the author name
+echo "Enter author name:"
+read author_name
+
 # Convert theme name to different formats
 theme_name_lower=$(tolower "${theme_name// /-}")
 theme_name_upper=$(toupper "${theme_name// /_}")
@@ -31,9 +35,21 @@ if [ -f "style.css" ]; then
     # Create a temporary file
     tmp_file=$(mktemp)
 
-    # Update the theme name in style.css while preserving the file structure
-    sed "s/Theme Name:         WPStarter/Theme Name:         ${theme_name_title}/" style.css > "$tmp_file"
-    sed -i "s/Description:        WPStarter/Description:        ${theme_name_title}/" "$tmp_file"
+    cat > "$tmp_file" << EOF
+/*
+Theme Name:         ${theme_name_title}
+Theme URI:          https://roots.io/sage/
+Description:        ${theme_name_title} is a WordPress theme.
+Version:            1.0.0
+Author:             ${author_name}
+Author URI:         https://roots.io/
+Text Domain:        sage
+License:            MIT License
+License URI:        https://opensource.org/licenses/MIT
+Requires PHP:       8.1
+Requires at least:  5.9
+*/
+EOF
 
     # Move the temporary file back to style.css
     mv "$tmp_file" style.css
