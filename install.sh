@@ -99,3 +99,23 @@ fi
 echo "Theme rename complete!"
 echo "New theme name: $theme_name_title"
 echo "Theme directory: $theme_name_lower"
+
+# Run npm build
+echo "Building theme assets..."
+if command -v npm &> /dev/null; then
+    if [ -f "package.json" ]; then
+        npm install && npm run build
+        if [ $? -eq 0 ]; then
+            echo "Theme assets built successfully!"
+        else
+            echo "Error: Failed to build theme assets"
+            exit 1
+        fi
+    else
+        echo "Warning: package.json not found"
+    fi
+else
+    echo "Warning: npm is not installed"
+fi
+
+echo "Setup complete! Your theme is ready to use."

@@ -28,10 +28,13 @@ npm install
 Run the script to change the naming of the theme to your theme name:
 ```bash
 # Make the script executable
-chmod +x rename.sh
-# Run the script
-./rename.sh
+chmod +x install.sh
 ```
+```bash
+# Run the script
+./install.sh
+```
+
 4. Update the screenshot.png file in the theme directory with a screenshot of your theme. The image should be 1200x900 pixels and named `screenshot.png`. This image will be used as the theme preview in the WordPress admin panel.
 
 5. Activate the theme in the WordPress admin panel.
