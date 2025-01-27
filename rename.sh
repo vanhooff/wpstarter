@@ -23,6 +23,10 @@ read theme_name
 echo "Enter author name:"
 read author_name
 
+# Ask for the theme URI
+echo "Enter developer URI (e.g. https://www.onlineklik.nl):"
+read theme_uri
+
 # Convert theme name to different formats
 theme_name_lower=$(tolower "${theme_name// /-}")
 theme_name_upper=$(toupper "${theme_name// /_}")
@@ -38,11 +42,11 @@ if [ -f "style.css" ]; then
     cat > "$tmp_file" << EOF
 /*
 Theme Name:         ${theme_name_title}
-Theme URI:          https://roots.io/sage/
-Description:        ${theme_name_title} is a WordPress theme.
+Theme URI:          ${theme_uri}
+Description:        ${theme_name_title} is a WordPress theme developed by ${author_name}.
 Version:            1.0.0
 Author:             ${author_name}
-Author URI:         https://roots.io/
+Author URI:         ${theme_uri}
 Text Domain:        sage
 License:            MIT License
 License URI:        https://opensource.org/licenses/MIT
