@@ -27,6 +27,10 @@ read author_name
 echo "Enter developer URI (e.g. https://www.onlineklik.nl):"
 read theme_uri
 
+# Ask for the local development URL
+echo "Enter your local development URL (e.g. https://wpstarter.test):"
+read dev_url
+
 # Convert theme name to different formats
 theme_name_lower=$(tolower "${theme_name// /-}")
 theme_name_upper=$(toupper "${theme_name// /_}")
@@ -65,6 +69,23 @@ EOF
     echo "Updated style.css"
 else
     echo "Warning: style.css not found"
+fi
+
+# Update bud.config.js
+if [ -f "bud.config.js" ]; then
+    # Create a temporary file
+    tmp_file=$(mktemp)
+
+    # Replace both the public path and proxy URL in bud.config.js
+    sed -e "s|app.setPublicPath('/app/themes/sage/public/')|app.setPublicPath('/app/themes/${theme_name_lower}/public/')|g" \
+        -e "s|.setProxyUrl('http://example.test')|.setProxyUrl('${dev_url}')|g" \
+        bud.config.js > "$tmp_file"
+
+    # Move the temporary file back to bud.config.js
+    mv "$tmp_file" bud.config.js
+    echo "Updated bud.config.js public path and proxy URL"
+else
+    echo "Warning: bud.config.js not found"
 fi
 
 # Rename theme directory
