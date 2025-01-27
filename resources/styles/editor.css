@@ -1,0 +1,13 @@
+/* Import the default WordPress classic editor style */
+@import url('../../../../../wp-includes/css/dist/edit-post/classic.min.css');
+
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.acf-field.acf-field-message .acf-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-top: 7px;
+  color: black;
+}

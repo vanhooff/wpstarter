@@ -15,8 +15,8 @@ function acf_missing_notice(): void
 {
     $class = 'notice notice-error';
     $message = sprintf(
-        __('Warning: Advanced Custom Fields (ACF) is required for this theme to function properly. %sPlease install and activate ACF%s.', 'your-theme-textdomain'),
-        '<a href="' . admin_url('plugin-install.php?s=Advanced+Custom+Fields&tab=search&type=term') . '">',
+        __('Warning: Advanced Custom Fields PRO (ACF) is required for this theme to function properly. %sPlease install and activate ACF%s.', 'sage'),
+        '<a href="https://www.advancedcustomfields.com/pro/">',
         '</a>'
     );
 
