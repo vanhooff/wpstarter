@@ -2,11 +2,13 @@
 WPStarter is a WordPress theme that is designed to be a starting point for new WordPress projects. It is based on the [Sage](https://roots.io/sage/) theme by [Roots](https://roots.io/).
 
 ## Getting started
-1. Make sure you have a Wordpress installation ready with connected DB.
+1. Make sure you have a Wordpress installation ready with connected DB. Also install **ACF PRO** as we are going to use it for our blocks.
 2. Clone this repository into the `wp-content/themes` directory of your WordPress installation. You can do this by running the following command in your terminal:
 
 ```bash
 cd /path/to/your/wordpress/installation/wp-content/themes
+```
+```bash
 git clone https://github.com/vanhooff/wpstarter.git
 ```
 
@@ -109,6 +111,41 @@ Then you can use the button component in your Blade templates like this:
 <x-button type="primary" label="Click Me" />
 ```
 
+### Creating components for ACF Blocks
+
+1. Each ACF block component requires its own directory within the blocks folder (this is the way we automatically detect it and register it), named identically to the component itself.
+
+For example, to create a block called `example-block`, you would create the following file:
+
+```
+resources/views/blocks/example-block/example-block.blade.php
+```
+
+To complete the block, place an SVG icon that represents the component in the same view directory with the name of the component. In this case:
+```
+resources/views/blocks/example-block/example-block.svg
+```
+A good source for a variety of SVG icons is [https://blade-ui-kit.com/blade-icons](https://blade-ui-kit.com/blade-icons).
+
+2. Next create an ACF field group with the block name and add the fields you want to use for the block. Below the fields, under tab location rules: Show this field group if: Block is equal to `Example Block`.
+3. All the field data is available in the block component view file. e.g.:
+```php
+  $image = get_field('image');
+  $title = get_field('title');
+```
+
+### Creating general components via CLI
+
+To create a new component the easy way just run this command in the theme directory:
+
+```bash
+# In the root components directory
+wp acorn make:component ExampleComponent
+
+# In a subdirectory
+wp acorn make:component Example/ExampleComponent
+```
+
 ## Styles and Scripts
 
 ### Directory Structure
@@ -125,7 +162,7 @@ Then you can use the button component in your Blade templates like this:
 
 ### Styling with Tailwind CSS
 
-Totally optional but extremely highly recommended. This theme comes with Tailwind CSS pre-configured. The main configuration file is `tailwind.config.js` in the root directory. Here you can rapidly create design systems, color palettes, and custom styles for your theme.
+Totally optional but extremely highly recommended. This theme comes with Tailwind CSS pre-configured. The main configuration file is `tailwind.config.cjs` in the root directory. Here you can rapidly create design systems, color palettes, and custom styles for your theme.
 
 ### Why Tailwind CSS?
 
@@ -145,7 +182,7 @@ Tailwind CSS is a utility-first CSS framework that offers several significant ad
 #### 3. Customization
 - **Highly Configurable**: Easy to customize colors, spacing, breakpoints, etc.
 ```js
-// tailwind.config.js
+// tailwind.config.cjs
 module.exports = {
     theme: {
         extend: {

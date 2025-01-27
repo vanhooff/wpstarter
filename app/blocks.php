@@ -34,27 +34,27 @@ function register_acf_blocks(): void
         return;
     }
 
-    $blocks_dir = get_template_directory() . '/resources/views/blocks/';
+	$blocks_dir = get_template_directory() . '/resources/views/blocks/';
 
-    foreach (glob($blocks_dir . '*', GLOB_ONLYDIR) as $block_dir) {
-        $block_name = basename($block_dir);
+	foreach (glob($blocks_dir . '*', GLOB_ONLYDIR) as $block_dir) {
+		$block_name = basename($block_dir);
 
-        // Define the path to the SVG file within the block's directory.
-        $svg_path = $block_dir . '/' . $block_name . '.svg';
+		// Define the path to the SVG file within the block's directory.
+		$svg_path = $block_dir . '/' . $block_name . '.svg';
 
-        // Check if the SVG file exists and convert the path to a URL.
-        $svg_url = file_exists($svg_path) ? file_get_contents($svg_path) : '';
+		// Check if the SVG file exists and convert the path to a URL.
+		$svg_url = file_exists($svg_path) ? file_get_contents($svg_path) : '';
 
-        $block_settings = array(
-            'name' => $block_name,
-            'title' => ucwords(str_replace('-', ' ', $block_name)),
-            'mode' => 'edit',
-            'render_callback' => 'render_acf_block',
-            'icon' => $svg_url,
-        );
+		$block_settings = array(
+			'name' => $block_name,
+			'title' => ucwords(str_replace('-', ' ', $block_name)),
+			'mode' => 'edit',
+			'render_callback' => 'render_acf_block',
+			'icon' => $svg_url,
+		);
 
-        acf_register_block_type($block_settings);
-    }
+		acf_register_block_type($block_settings);
+	}
 }
 
 /**

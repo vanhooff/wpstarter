@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} config */
+const typography = require('@tailwindcss/typography');
+const forms = require('@tailwindcss/forms');
+
 const config = {
   content: ['./app/**/*.php', './resources/**/*.{php,vue,js}'],
   theme: {
@@ -6,7 +8,10 @@ const config = {
       colors: {}, // Extend Tailwind's default colors
     },
   },
-  plugins: [],
+  plugins: [
+    typography,
+    forms,
+  ],
 };
 
-export default config;
+module.exports = config;
