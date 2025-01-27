@@ -10,9 +10,9 @@ toupper() {
     echo "$1" | tr '[:lower:]' '[:upper:]'
 }
 
-# Function to convert string to title case
+# Function to properly capitalize words
 totitle() {
-    echo "$1" | sed 's/.*/\L&/; s/[a-z]*/\u&/g'
+    echo "$1" | awk '{for(i=1;i<=NF;i++)sub(/./,toupper(substr($i,1,1)),$i)}1'
 }
 
 # Ask for the new theme name
@@ -26,7 +26,7 @@ read author_name
 # Convert theme name to different formats
 theme_name_lower=$(tolower "${theme_name// /-}")
 theme_name_upper=$(toupper "${theme_name// /_}")
-theme_name_title=$(totitle "$theme_name")
+theme_name_title="$theme_name"
 theme_name_pascal="${theme_name_title// /}"
 theme_name_snake=$(tolower "${theme_name// /_}")
 
