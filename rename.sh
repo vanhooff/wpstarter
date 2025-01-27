@@ -20,7 +20,7 @@ echo "Enter your theme name (e.g. My Awesome Theme):"
 read theme_name
 
 # Ask for the author name
-echo "Enter author name:"
+echo "Enter author name (e.g. Online Klik B.V.):"
 read author_name
 
 # Ask for the theme URI
@@ -52,6 +52,11 @@ License:            MIT License
 License URI:        https://opensource.org/licenses/MIT
 Requires PHP:       8.1
 Requires at least:  5.9
+*/
+
+/*
+Do not add your styles here. Add your custom styles resources/styles/app.css.
+Do not forget to run "npm run dev" when you are developing and "npm run build" when you are ready to deploy.
 */
 EOF
 
