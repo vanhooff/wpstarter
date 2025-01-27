@@ -26,24 +26,21 @@ theme_name_title=$(totitle "$theme_name")
 theme_name_pascal="${theme_name_title// /}"
 theme_name_snake=$(tolower "${theme_name// /_}")
 
-# Files to update
-files_to_update=(
-    "style.css"
-)
+# Update style.css
+if [ -f "style.css" ]; then
+    # Create a temporary file
+    tmp_file=$(mktemp)
 
-# Perform replacements
-echo "Updating theme files..."
+    # Update the theme name in style.css while preserving the file structure
+    sed "s/Theme Name:         WPStarter/Theme Name:         ${theme_name_title}/" style.css > "$tmp_file"
+    sed -i "s/Description:        WPStarter/Description:        ${theme_name_title}/" "$tmp_file"
 
-for file in "${files_to_update[@]}"; do
-    if [ -f "$file" ]; then
-        sed -i "s/WPStarter/${theme_name_pascal}/g" "$file"
-        sed -i "s/wpstarter/${theme_name_lower}/g" "$file"
-        sed -i "s/WPSTARTER/${theme_name_upper}/g" "$file"
-        echo "Updated $file"
-    else
-        echo "Warning: $file not found"
-    fi
-done
+    # Move the temporary file back to style.css
+    mv "$tmp_file" style.css
+    echo "Updated style.css"
+else
+    echo "Warning: style.css not found"
+fi
 
 # Rename theme directory
 current_dir=${PWD##*/}
