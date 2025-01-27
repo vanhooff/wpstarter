@@ -88,11 +88,12 @@ else
     echo "Warning: bud.config.js not found"
 fi
 
-# Rename theme directory
+# Rename theme directory and maintain correct path
 current_dir=${PWD##*/}
 if [ "$current_dir" = "wpstarter" ]; then
     cd ..
     mv wpstarter "$theme_name_lower"
+    cd "$theme_name_lower"
     echo "Renamed theme directory to $theme_name_lower"
 fi
 
