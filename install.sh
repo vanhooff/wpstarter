@@ -125,7 +125,6 @@ if [ "$theme_name_lower" != "wpstarter" ]; then
     echo "Removed install.sh for security reasons"
 fi
 
-# Print final message with color and border
 echo
 echo -e "\033[1;32m╔════════════════════════════════════════════════════════════════╗"
 echo -e "║                                                                    ║"
