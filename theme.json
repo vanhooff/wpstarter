@@ -96,57 +96,57 @@
           "slug": "slate-950"
         },
         {
-          "color": "#f9fafb",
+          "color": "#fafafa",
           "name": "Gray 50",
           "slug": "gray-50"
         },
         {
-          "color": "#f3f4f6",
+          "color": "#f5f5f5",
           "name": "Gray 100",
           "slug": "gray-100"
         },
         {
-          "color": "#e5e7eb",
+          "color": "#e5e5e5",
           "name": "Gray 200",
           "slug": "gray-200"
         },
         {
-          "color": "#d1d5db",
+          "color": "#d4d4d4",
           "name": "Gray 300",
           "slug": "gray-300"
         },
         {
-          "color": "#9ca3af",
+          "color": "#a3a3a3",
           "name": "Gray 400",
           "slug": "gray-400"
         },
         {
-          "color": "#6b7280",
+          "color": "#737373",
           "name": "Gray 500",
           "slug": "gray-500"
         },
         {
-          "color": "#4b5563",
+          "color": "#525252",
           "name": "Gray 600",
           "slug": "gray-600"
         },
         {
-          "color": "#374151",
+          "color": "#404040",
           "name": "Gray 700",
           "slug": "gray-700"
         },
         {
-          "color": "#1f2937",
+          "color": "#262626",
           "name": "Gray 800",
           "slug": "gray-800"
         },
         {
-          "color": "#111827",
+          "color": "#171717",
           "name": "Gray 900",
           "slug": "gray-900"
         },
         {
-          "color": "#030712",
+          "color": "#0a0a0a",
           "name": "Gray 950",
           "slug": "gray-950"
         },
@@ -1274,19 +1274,14 @@
       "customFontSize": false,
       "fontFamilies": [
         {
-          "fontFamily": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
-          "name": "Ui-sans-serif",
-          "slug": "sans"
+          "fontFamily": "Body,ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+          "name": "Body",
+          "slug": "body"
         },
         {
-          "fontFamily": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
-          "name": "Ui-serif",
-          "slug": "serif"
-        },
-        {
-          "fontFamily": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
-          "name": "Ui-monospace",
-          "slug": "mono"
+          "fontFamily": "Heading,ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
+          "name": "Heading",
+          "slug": "heading"
         }
       ],
       "fontSizes": [
