@@ -17,7 +17,7 @@
 
     @include('sections.header')
 
-    <main>
+    <main id="main">
       @yield('content')
     </main>
 
