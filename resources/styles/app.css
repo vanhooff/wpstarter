@@ -26,3 +26,23 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+body.admin-bar .sticky-header {  /* if you have a sticky header */
+  @apply top-[32px];
+}
+
+@media (max-width: 782px) {
+
+  body.admin-bar #wpadminbar {
+    @apply hidden;
+  }
+
+
+  body.admin-bar .sticky-header { /* if you have a sticky header */
+    @apply top-0;
+  }
+
+  html, html:has(.admin-bar) {
+    @apply !mt-0;
+  }
+}

@@ -24,6 +24,7 @@ const config = {
     extend: {
       colors: { // Add desired theme colors here
         gray: colors.neutral,
+        // other colors
       },
       typography: {
         DEFAULT: {
