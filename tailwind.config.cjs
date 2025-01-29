@@ -4,7 +4,7 @@ const typography = require('@tailwindcss/typography');
 const forms = require('@tailwindcss/forms');
 
 const config = {
-  content: ['./app/**/*.php', './resources/**/*.{php,vue,js}'],
+  content: ['./app/**/*.php', './resources/**/*.php', './resources/**/*.svg'],
   theme: {
     fontFamily: {
       body: ['Body', ...defaultTheme.fontFamily.sans],
