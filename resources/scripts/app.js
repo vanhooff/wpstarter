@@ -13,7 +13,7 @@ import Alpine from 'alpinejs'
  * Application entrypoint
  */
 domReady(async () => {
-  window.Fancybox = Fancybox
+  // window.Fancybox = Fancybox
 
   Alpine.plugin(collapse)
   Alpine.plugin(focus)
