@@ -125,5 +125,13 @@ if [ "$theme_name_lower" != "wpstarter" ]; then
     echo "Removed install.sh for security reasons"
 fi
 
-echo "Setup complete! Your theme is ready to use."
+# Print final message with color and border
+echo
+echo -e "\033[1;32m╔════════════════════════════════════════════════════════════════╗"
+echo -e "║                                                                    ║"
+echo -e "║   🎉 Setup complete! Your theme is ready to use.                  ║"
+echo -e "║   ✨ You can now activate the theme in WordPress admin Panel.     ║"
+echo -e "║                                                                    ║"
+echo -e "╚════════════════════════════════════════════════════════════════╝\033[0m"
+echo
 
