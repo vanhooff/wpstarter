@@ -77,7 +77,7 @@ if [ -f "bud.config.js" ]; then
     tmp_file=$(mktemp)
 
     # Replace both the public path and proxy URL in bud.config.js
-    sed -e "s|app.setPublicPath('/app/themes/sage/public/')|app.setPublicPath('/app/themes/${theme_name_lower}/public/')|g" \
+    sed -e "s|app.setPublicPath('/app/themes/sage/public/')|app.setPublicPath('/wp-content/themes/${theme_name_lower}/public/')|g" \
         -e "s|.setProxyUrl('http://example.test')|.setProxyUrl('${dev_url}')|g" \
         bud.config.js > "$tmp_file"
 
