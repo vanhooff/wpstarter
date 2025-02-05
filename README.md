@@ -1,13 +1,16 @@
 # WPStarter
+
 WPStarter is a WordPress theme that is designed to be a starting point for new WordPress projects. It is based on the [Sage](https://roots.io/sage/) theme by [Roots](https://roots.io/).
 
 ## Getting started
+
 1. Make sure you have a Wordpress installation ready with connected DB. Also install **ACF PRO** as we are going to use it for our blocks.
 2. Clone this repository into the `wp-content/themes` directory of your WordPress installation. You can do this by running the following command in your terminal:
 
 ```bash
 cd /path/to/your/wordpress/installation/wp-content/themes
 ```
+
 ```bash
 git clone https://github.com/vanhooff/wpstarter.git
 ```
@@ -15,23 +18,30 @@ git clone https://github.com/vanhooff/wpstarter.git
 3. Install the required dependencies by running the following commands in the theme directory:
 
 Change directory to the theme directory:
+
 ```bash
 cd wpstarter
 ```
+
 Install composer dependencies:
+
 ```bash
 composer install
 ```
+
 Install npm dependencies. You can also use yarn if you prefer.
+
 ```bash
 npm install
 ```
 
 Run the script to change the naming of the theme to your theme name:
+
 ```bash
 # Make the script executable
 chmod +x install.sh
 ```
+
 ```bash
 # Run the script
 ./install.sh
@@ -46,6 +56,7 @@ chmod +x install.sh
 ```bash
 npm run dev
 ```
+
 Styles and script will compile on the fly. When you are done and ready for production run `npm run build` to compile optimized the styles and scripts for production.
 
 **Do not edit the styles and script in the public folder directly. They will be overwritten when you run `npm run build`.**
@@ -65,9 +76,11 @@ As mentioned before, this theme is based on the Sage theme by Roots. The documen
 This theme uses the [Blade](https://laravel.com/docs/blade) templating engine with a two-part component structure:
 
 #### 1. Component Views (`resources/views/components`)
+
 Contains the Blade template files that define how components look. These are the actual HTML/PHP templates that render your components.
 
 #### 2. Component Logic (`app/View/Components`)
+
 Contains the PHP classes that handle the component's functionality, data processing, and business logic.
 
 #### How it works
@@ -101,15 +114,25 @@ class Button extends Component
 ```html
 <!-- resources/views/components/button.blade.php -->
 <button class="btn btn-{{ $type }}">
-    {{ $label }}
+  {{ $label }}
 </button>
 ```
 
 Then you can use the button component in your Blade templates like this:
 
 ```html
-<x-button type="primary" label="Click Me" />
+
+<x-button type="primary" label="Click Me"/>
 ```
+
+### Sage Directives
+
+This starterkit also includes the Sage Directives package, which adds a variety of useful Blade directives for use with Sage 10 including directives for WordPress, ACF, and various miscellaneous helpers.
+
+More info about Sage Directives can be found here;
+
+- [Wordpress directives &rarr;](https://log1x.github.io/sage-directives-docs/usage/wordpress.html)
+- [ACF directives &rarr;](https://log1x.github.io/sage-directives-docs/usage/acf.html)
 
 ### Creating components for ACF Blocks
 
@@ -122,13 +145,16 @@ resources/views/blocks/example-block/example-block.blade.php
 ```
 
 To complete the block, place an SVG icon that represents the component in the same view directory with the name of the component. In this case:
+
 ```
 resources/views/blocks/example-block/example-block.svg
 ```
+
 A good source for a variety of SVG icons is [https://blade-ui-kit.com/blade-icons](https://blade-ui-kit.com/blade-icons).
 
 2. Next create an ACF field group with the block name and add the fields you want to use for the block. Below the fields, under tab location rules: Show this field group if: Block is equal to `Example Block`.
 3. All the field data is available in the block component view file. e.g.:
+
 ```php
   $image = get_field('image');
   $title = get_field('title');
@@ -169,29 +195,33 @@ Totally optional but extremely highly recommended. This theme comes with Tailwin
 Tailwind CSS is a utility-first CSS framework that offers several significant advantages for WordPress theme development:
 
 #### 1. Development Speed
+
 - **Rapid Prototyping**: Build custom designs quickly without writing CSS from scratch
 - **No Context Switching**: Write styles directly in your HTML/Blade templates
 - **Predictable Results**: Classes behave the same way everywhere they're used
 
 #### 2. Maintainability
+
 - **No CSS Specificity Wars**: Avoid cascading style conflicts
 - **Consistent Naming**: No more struggling with BEM or other naming conventions
 - **Smaller CSS Bundle**: Only includes the styles you actually use
 - **Easy Updates**: Modify styles directly in templates without hunting through CSS files
 
 #### 3. Customization
+
 - **Highly Configurable**: Easy to customize colors, spacing, breakpoints, etc.
+
 ```js
 // tailwind.config.cjs
 module.exports = {
-    theme: {
-        extend: {
-            colors: {
-                primary: '#FF0000',
-                secondary: '#00FF00',
-            },
-        },
+  theme: {
+    extend: {
+      colors: {
+        primary: '#FF0000',
+        secondary: '#00FF00',
+      },
     },
+  },
 }
 ```
 
@@ -200,8 +230,8 @@ module.exports = {
 ```html
 <!-- Example component using Tailwind classes -->
 <div class="bg-white rounded-lg shadow-md p-6">
-    <h2 class="text-xl font-bold mb-4">Title</h2>
-    <p class="text-gray-600">Content</p>
+  <h2 class="text-xl font-bold mb-4">Title</h2>
+  <p class="text-gray-600">Content</p>
 </div>
 ```
 
@@ -212,23 +242,29 @@ More information on Tailwind CSS can be found [here](https://tailwindcss.com).
 Totally optional but extremely highly recommended. This theme comes with Alpine.js pre-configured. Alpine.js is a minimal framework for composing JavaScript behavior in your HTML templates. It offers several significant advantages for WordPress theme development:
 
 #### 1. Simplicity & Learning Curve
+
 - **Minimal Syntax**: Similar to Vue.js but lighter and simpler
 - **HTML-First**: Write JavaScript behavior directly in your HTML
 - **No Build Step Required**: Works directly in the browser
 - **Small Size**: Only ~7kb gzipped
 
 #### 2. Component Functionality
+
 - **Declarative Data Binding**: Easily bind data to elements
+
 ```html
+
 <div x-data="{ open: false }">
-    <button @click="open = !open">Toggle</button>
-    <div x-show="open">Content</div>
+  <button @click="open = !open">Toggle</button>
+  <div x-show="open">Content</div>
 </div>
 ```
+
 - **State Management**: Handle component state without complex setup
 - **Event Handling**: Simple event listeners and responses
 
 #### 3. WordPress Integration Benefits
+
 - **No Framework Lock-in**: Works alongside any other JavaScript
 - **Gutenberg Compatible**: Perfect for enhancing blocks
 - **Progressive Enhancement**: Add interactivity without breaking basic functionality
@@ -236,13 +272,16 @@ Totally optional but extremely highly recommended. This theme comes with Alpine.
 #### 4. Simple example
 
 Dropdown menu:
+
 ```html
+
 <div x-data="{ open: false }">
-    <button @click="open = !open">Menu</button>
-    <ul x-show="open" @click.away="open = false">
-        <li>Item 1</li>
-        <li>Item 2</li>
-    </ul>
+  <button @click="open = !open">Menu</button>
+  <ul x-show="open" @click.away="open = false">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
 </div>
 ```
+
 More information on Alpine.js can be found [here](https://alpinejs.dev).
