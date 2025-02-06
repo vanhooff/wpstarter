@@ -67,6 +67,14 @@ else
     echo "Warning: style.css not found"
 fi
 
+# replace the public path in vite.config.js
+if [ -f "vite.config.js" ]; then
+    sed -i "s|base: '/app/themes/sage/public/build/',|base: '/wp-content/themes/${theme_name_lower}/public/build/',|g" vite.config.js
+    echo "Updated vite.config.js"
+else
+    echo "Warning: vite.config.js not found"
+fi
+
 # Rename theme directory and maintain correct path
 current_dir=${PWD##*/}
 if [ "$current_dir" = "wpstarter" ]; then

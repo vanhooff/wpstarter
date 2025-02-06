@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite'
 import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin'
 import {
@@ -12,6 +12,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     laravel({
+      detectTls: 'example.test', // Change this to your local development domain for SSL usage during development
       input: [
         'resources/css/app.css',
         'resources/js/app.js',
