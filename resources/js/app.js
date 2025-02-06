@@ -10,7 +10,7 @@ import anchor from '@alpinejs/anchor'
 import resize from '@alpinejs/resize'
 import Alpine from 'alpinejs'
 
-domReady(async () => {
+document.addEventListener('DOMContentLoaded', async () => {
   // window.Fancybox = Fancybox
 
   Alpine.plugin(collapse)
