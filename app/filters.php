@@ -11,9 +11,9 @@ namespace App;
  *
  * @return string
  */
-add_filter('excerpt_more', function () {
-    return sprintf(' &hellip; <a href="%s">%s</a>', get_permalink(), __('Continued', 'sage'));
-});
+add_filter( 'excerpt_more', function () {
+    return sprintf( ' &hellip; <a href="%s">%s</a>', get_permalink(), __( 'Continued', 'sage' ) );
+} );
 
 // Add a custom shortcode that disables texturization
 function my_custom_no_texturize_shortcode( $shortcodes ) {
@@ -78,3 +78,4 @@ add_action( 'wp_before_admin_bar_render', function () {
     global $wp_admin_bar;
     $wp_admin_bar->remove_menu( 'comments' );
 } );
+

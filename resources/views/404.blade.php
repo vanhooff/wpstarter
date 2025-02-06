@@ -2,8 +2,8 @@
 
 @section('content')
 
-  @if (! have_posts())
-    404
-  @endif
-  
+    @if (! have_posts())
+        404
+    @endif
+
 @endsection

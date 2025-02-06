@@ -39,9 +39,9 @@
     }
   },
   "require": {
-    "php": ">=8.1",
+    "php": ">=8.2",
     "log1x/sage-directives": "^2.0",
-    "roots/acorn": "^4.3"
+    "roots/acorn": "dev-main"
   },
   "require-dev": {
     "laravel/pint": "^1.13"
@@ -55,17 +55,5 @@
     "sort-packages": true
   },
   "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "acorn": {
-      "providers": [
-        "App\\Providers\\ThemeServiceProvider"
-      ]
-    }
-  },
-  "scripts": {
-    "post-autoload-dump": [
-      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
-    ]
-  }
+  "prefer-stable": true
 }

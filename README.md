@@ -114,7 +114,7 @@ class Button extends Component
 ```html
 <!-- resources/views/components/button.blade.php -->
 <button class="btn btn-{{ $type }}">
-  {{ $label }}
+    {{ $label }}
 </button>
 ```
 
@@ -178,17 +178,17 @@ wp acorn make:component Example/ExampleComponent
 
 ```
 ├── resources/ 
-│ ├── scripts/ 
+│ ├── js/ 
 │ │ ├── app.js # Main JavaScript entry point 
 │ │ └── editor.js # Gutenberg-specific JavaScript entry point
-│ └── styles/ 
-│ ├── app.css # Main CSS entry point 
+│ └── css/ 
+│ ├── app.css # Tailwind configuration and Main CSS entry point
 │ ├── editor.css # Gutenberg-specific CSS entry point
 ```
 
 ### Styling with Tailwind CSS
 
-Totally optional but extremely highly recommended. This theme comes with Tailwind CSS pre-configured. The main configuration file is `tailwind.config.cjs` in the root directory. Here you can rapidly create design systems, color palettes, and custom styles for your theme.
+Totally optional but extremely highly recommended. This theme comes with Tailwind CSS pre-configured.
 
 ### Why Tailwind CSS?
 
@@ -207,31 +207,13 @@ Tailwind CSS is a utility-first CSS framework that offers several significant ad
 - **Smaller CSS Bundle**: Only includes the styles you actually use
 - **Easy Updates**: Modify styles directly in templates without hunting through CSS files
 
-#### 3. Customization
-
-- **Highly Configurable**: Easy to customize colors, spacing, breakpoints, etc.
-
-```js
-// tailwind.config.cjs
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#FF0000',
-        secondary: '#00FF00',
-      },
-    },
-  },
-}
-```
-
-#### 1. Using Tailwind
+### 1. Using Tailwind
 
 ```html
 <!-- Example component using Tailwind classes -->
 <div class="bg-white rounded-lg shadow-md p-6">
-  <h2 class="text-xl font-bold mb-4">Title</h2>
-  <p class="text-gray-600">Content</p>
+    <h2 class="text-xl font-bold mb-4">Title</h2>
+    <p class="text-gray-600">Content</p>
 </div>
 ```
 
@@ -255,8 +237,8 @@ Totally optional but extremely highly recommended. This theme comes with Alpine.
 ```html
 
 <div x-data="{ open: false }">
-  <button @click="open = !open">Toggle</button>
-  <div x-show="open">Content</div>
+    <button @click="open = !open">Toggle</button>
+    <div x-show="open">Content</div>
 </div>
 ```
 
@@ -276,11 +258,11 @@ Dropdown menu:
 ```html
 
 <div x-data="{ open: false }">
-  <button @click="open = !open">Menu</button>
-  <ul x-show="open" @click.away="open = false">
-    <li>Item 1</li>
-    <li>Item 2</li>
-  </ul>
+    <button @click="open = !open">Menu</button>
+    <ul x-show="open" @click.away="open = false">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
 </div>
 ```
 

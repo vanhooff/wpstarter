@@ -1,5 +1,5 @@
-/* Import the default WordPress classic editor style */
 @import url('../../../../../wp-includes/css/dist/edit-post/classic.min.css');
+@import "tailwindcss";
 
 h1 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -11,3 +11,4 @@ h1 {
   padding-top: 7px;
   color: black;
 }
+

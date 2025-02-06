@@ -2,13 +2,14 @@
 
 @section('content')
 
-  @if (! have_posts())
-      {!! __('Sorry, no results were found.', 'sage') !!}
-  @endif
+    @if (! have_posts())
+        {!! get_search_form(false) !!}
+    @endif
 
-  @while(have_posts()) @php(the_post())
-    @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
-  @endwhile
+    @while(have_posts())
+        @php(the_post())
+        @includeFirst(['partials.content-' . get_post_type(), 'partials.content'])
+    @endwhile
 
-  {!! get_the_posts_navigation() !!}
+    {!! get_the_posts_navigation() !!}
 @endsection
