@@ -128,12 +128,8 @@ if [ "$theme_name_lower" != "wpstarter" ]; then
 fi
 
 echo
-echo -e "\033[1;32m+------------------------------------------------------------+"
-echo -e "|                                                                |"
-echo -e "|  🎉 Setup complete! Your theme is ready to use.                |"
-echo -e "|  ✨ You can now activate the theme in WordPress admin Panel.   |"
-echo -e "|                                                                |"
-echo -e "+------------------------------------------------------------+\033[0m"
+echo -e "\033[1;32m🎉 Setup complete! Your theme is ready to use."
+echo -e "✨ You can now activate the theme in WordPress admin Panel.\033[0m"
 echo
 
 
