@@ -38,14 +38,11 @@ npm install
 Run the script to change the naming of the theme to your theme name:
 
 ```bash
-# Make the script executable
 chmod +x install.sh
-```
-
-```bash
-# Run the script
 ./install.sh
 ```
+
+This scripts will delete itself after running for security purposes.
 
 4. Update the screenshot.png file in the theme directory with a screenshot of your theme. The image should be 1200x900 pixels and named `screenshot.png`. This image will be used as the theme preview in the WordPress admin panel.
 
@@ -114,7 +111,7 @@ class Button extends Component
 ```html
 <!-- resources/views/components/button.blade.php -->
 <button class="btn btn-{{ $type }}">
-    {{ $label }}
+  {{ $label }}
 </button>
 ```
 
@@ -212,8 +209,8 @@ Tailwind CSS is a utility-first CSS framework that offers several significant ad
 ```html
 <!-- Example component using Tailwind classes -->
 <div class="bg-white rounded-lg shadow-md p-6">
-    <h2 class="text-xl font-bold mb-4">Title</h2>
-    <p class="text-gray-600">Content</p>
+  <h2 class="text-xl font-bold mb-4">Title</h2>
+  <p class="text-gray-600">Content</p>
 </div>
 ```
 
@@ -237,8 +234,8 @@ Totally optional but extremely highly recommended. This theme comes with Alpine.
 ```html
 
 <div x-data="{ open: false }">
-    <button @click="open = !open">Toggle</button>
-    <div x-show="open">Content</div>
+  <button @click="open = !open">Toggle</button>
+  <div x-show="open">Content</div>
 </div>
 ```
 
@@ -258,11 +255,11 @@ Dropdown menu:
 ```html
 
 <div x-data="{ open: false }">
-    <button @click="open = !open">Menu</button>
-    <ul x-show="open" @click.away="open = false">
-        <li>Item 1</li>
-        <li>Item 2</li>
-    </ul>
+  <button @click="open = !open">Menu</button>
+  <ul x-show="open" @click.away="open = false">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
 </div>
 ```
 
