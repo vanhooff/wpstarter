@@ -16,16 +16,19 @@ totitle() {
 }
 
 # Ask for the new theme name
-echo "Enter your theme name (e.g. My Awesome Theme):"
+echo "Enter your theme name (press Enter for 'My Awesome Theme'):"
 read theme_name
+theme_name="${theme_name:-My Awesome Theme}"
 
 # Ask for the author name
-echo "Enter author name (e.g. Online Klik B.V.):"
+echo "Enter author name (press Enter for 'Online Klik B.V.'):"
 read author_name
+author_name="${author_name:-Online Klik B.V.}"
 
 # Ask for the theme URI
-echo "Enter developer URI (e.g. https://www.onlineklik.nl):"
+echo "Enter developer URI (press Enter for 'https://www.onlineklik.nl'):"
 read theme_uri
+theme_uri="${theme_uri:-https://www.onlineklik.nl}"
 
 # Convert theme name to different formats
 theme_name_lower=$(tolower "${theme_name// /-}")
@@ -106,6 +109,18 @@ else
     echo "Warning: npm is not installed"
 fi
 
+# Remove existing .git if present, then initialize fresh git repo
+if [ -d ".git" ]; then
+    rm -rf .git
+    echo "Removed existing .git directory"
+fi
+
+git init
+git add .
+git commit -m "Initial commit"
+echo "Initialized new git repository with initial commit"
+
+
 # if theme name is not wpstarter, remove the install script
 if [ "$theme_name_lower" != "wpstarter" ]; then
     rm install.sh
@@ -113,11 +128,12 @@ if [ "$theme_name_lower" != "wpstarter" ]; then
 fi
 
 echo
-echo -e "\033[1;32m╔════════════════════════════════════════════════════════════════╗"
-echo -e "║                                                                    ║"
-echo -e "║   🎉 Setup complete! Your theme is ready to use.                  ║"
-echo -e "║   ✨ You can now activate the theme in WordPress admin Panel.     ║"
-echo -e "║                                                                    ║"
-echo -e "╚════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\033[1;32m+------------------------------------------------------------+"
+echo -e "|                                                                |"
+echo -e "|  🎉 Setup complete! Your theme is ready to use.                |"
+echo -e "|  ✨ You can now activate the theme in WordPress admin Panel.   |"
+echo -e "|                                                                |"
+echo -e "+------------------------------------------------------------+\033[0m"
 echo
+
 
