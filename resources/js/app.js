@@ -2,6 +2,7 @@ import.meta.glob([
   '../images/**',
   '../fonts/**',
 ])
+import {Splide} from '@splidejs/splide'
 import collapse from '@alpinejs/collapse'
 import focus from '@alpinejs/focus'
 import ui from '@alpinejs/ui'
@@ -11,7 +12,8 @@ import resize from '@alpinejs/resize'
 import Alpine from 'alpinejs'
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // window.Fancybox = Fancybox
+
+  window.Splide = Splide
 
   Alpine.plugin(collapse)
   Alpine.plugin(focus)
