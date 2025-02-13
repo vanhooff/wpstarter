@@ -2,6 +2,32 @@
 
 WPStarter is a WordPress theme that is designed to be a starting point for new WordPress projects. It is based on the [Sage](https://roots.io/sage/) theme by [Roots](https://roots.io/).
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [MacOS Installation](#macos)
+  - [Windows Installation](#-windows-not-tested-yet)
+
+- [Core Concepts](#core-concepts)
+  - [Theme Architecture](#theme-architecture)
+  - [Component Architecture](#component-architecture-using-laravel-blade-template-engine)
+    - [Component Views](#1-component-views-resourcesviewscomponents)
+    - [Component Logic](#2-component-logic-appviewcomponents)
+  - [Sage Directives](#sage-directives)
+  - [Creating ACF Block Components](#creating-components-for-acf-blocks)
+  - [Creating General Components](#creating-general-components-via-cli)
+
+- [Styles and Scripts](#styles-and-scripts)
+  - [Directory Structure](#directory-structure)
+  - [Styling with Tailwind CSS](#styling-with-tailwind-css)
+    - [Why Tailwind CSS](#why-tailwind-css)
+    - [Using Tailwind](#1-using-tailwind)
+  - [Using Alpine.js](#using-alpinejs)
+    - [Simplicity & Learning Curve](#1-simplicity--learning-curve)
+    - [Component Functionality](#2-component-functionality)
+    - [WordPress Integration Benefits](#3-wordpress-integration-benefits)
+    - [Simple Example](#4-simple-example)
+
 ## Getting started
 
 1. Make sure you have a Wordpress installation ready with connected DB. Also install **ACF PRO** as we are going to use it for our blocks.
@@ -36,6 +62,16 @@ npm install
 ```
 
 Run the script to change the naming of the theme to your theme name:
+
+####  MacOS:
+
+Just run the bash commands below.
+
+#### ⊞ Windows (not tested yet):
+
+1. First download (if you haven't already) [Git for Windows](https://gitforwindows.org) and install it.
+2. Open Git Bash and navigate to the theme directory.
+3. Run the following command below. After you completed the installation, you can use your preferred terminal again.
 
 ```bash
 chmod +x install.sh
