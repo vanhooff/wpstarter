@@ -30,18 +30,18 @@ echo "Enter author URI (press Enter for 'https://www.onlineklik.nl'):"
 read theme_uri
 theme_uri="${theme_uri:-https://www.onlineklik.nl}"
 
-# Ask for the local development URL
-echo "Enter local development domain (press Enter for '${theme_name_lower}.test'):"
-read local_domain
-local_domain="${local_domain:-${theme_name_lower}.test}"
-
-
 # Convert theme name to different formats
 theme_name_lower=$(tolower "${theme_name// /-}")
 theme_name_upper=$(toupper "${theme_name// /_}")
 theme_name_title="$theme_name"
 theme_name_pascal="${theme_name_title// /}"
 theme_name_snake=$(tolower "${theme_name// /_}")
+
+# Ask for the local development URL
+echo "Enter local development domain (press Enter for '${theme_name_lower}.test'):"
+read local_domain
+local_domain="${local_domain:-${theme_name_lower}.test}"
+
 
 # Update style.css
 if [ -f "style.css" ]; then
