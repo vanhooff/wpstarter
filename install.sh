@@ -31,11 +31,8 @@ read theme_uri
 theme_uri="${theme_uri:-https://www.onlineklik.nl}"
 
 # Convert theme name to different formats
-theme_name_lower=$(tolower "${theme_name// /-}")
-theme_name_upper=$(toupper "${theme_name// /_}")
+theme_name_lower=$(tolower "${theme_name// /}")
 theme_name_title="$theme_name"
-theme_name_pascal="${theme_name_title// /}"
-theme_name_snake=$(tolower "${theme_name// /_}")
 
 # Ask for the local development URL
 echo "Enter local development domain (press Enter for '${theme_name_lower}.test'):"
