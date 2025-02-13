@@ -176,6 +176,26 @@ git commit -m "Initial commit"
 echo "Initialized new git repository with initial commit"
 
 
+# Remove default WordPress themes except the latest
+echo "Removing default WordPress themes..."
+cd ..
+# Get the highest numbered theme using numeric comparison
+latest_theme=$(ls -d twenty* | while read theme; do
+    num=$(echo "$theme" | sed -E 's/twenty(twenty)?//' | sed 's/three/3/;s/four/4/;s/five/5/;s/six/6/;s/seven/7/;s/eight/8/;s/nine/9/')
+    echo "$num:$theme"
+done | sort -t: -k1,1n | tail -n1 | cut -d: -f2)
+
+# Remove all twenty* themes except the latest
+for theme in twenty*; do
+    if [ "$theme" != "$latest_theme" ]; then
+        rm -rf "$theme"
+        echo "Removed $theme"
+    fi
+done
+cd "$theme_name_lower"
+echo "Kept $latest_theme as fallback theme"
+
+
 # if theme name is not wpstarter, remove the install script
 if [ "$theme_name_lower" != "wpstarter" ]; then
     rm install.sh
