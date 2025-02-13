@@ -26,9 +26,14 @@ read author_name
 author_name="${author_name:-Online Klik B.V.}"
 
 # Ask for the theme URI
-echo "Enter developer URI (press Enter for 'https://www.onlineklik.nl'):"
+echo "Enter author URI (press Enter for 'https://www.onlineklik.nl'):"
 read theme_uri
 theme_uri="${theme_uri:-https://www.onlineklik.nl}"
+
+# Ask for the local development URL
+echo "Enter local development domain:"
+read local_domain
+
 
 # Convert theme name to different formats
 theme_name_lower=$(tolower "${theme_name// /-}")
@@ -70,9 +75,58 @@ else
     echo "Warning: style.css not found"
 fi
 
-# replace the public path in vite.config.js
+# Update vite.config.js
 if [ -f "vite.config.js" ]; then
-    sed -i "s|base: '/app/themes/sage/public/build/',|base: '/wp-content/themes/${theme_name_lower}/public/build/',|g" vite.config.js
+    # Create a temporary file
+    tmp_file=$(mktemp)
+
+    cat > "$tmp_file" << EOF
+import {defineConfig} from 'vite'
+import tailwindcss from '@tailwindcss/vite';
+import laravel from 'laravel-vite-plugin'
+import {
+  wordpressPlugin,
+  wordpressRollupPlugin,
+  wordpressThemeJson,
+} from './resources/js/build/wordpress'
+
+export default defineConfig({
+  base: '/wp-content/themes/${theme_name_lower}/public/build/',
+  plugins: [
+    tailwindcss(),
+    laravel({
+      detectTls: '${local_domain}',
+      input: [
+        'resources/css/app.css',
+        'resources/js/app.js',
+        'resources/css/editor.css',
+        'resources/js/editor.js',
+      ],
+      refresh: true,
+    }),
+
+    wordpressPlugin(),
+    wordpressRollupPlugin(),
+
+    wordpressThemeJson({
+      disableTailwindColors: false,
+      disableTailwindFonts: false,
+      disableTailwindFontSizes: false,
+    }),
+  ],
+  resolve: {
+    alias: {
+      '@scripts': '/resources/js',
+      '@styles': '/resources/css',
+      '@fonts': '/resources/fonts',
+      '@images': '/resources/images',
+    },
+  },
+})
+EOF
+
+    # Move the temporary file back to vite.config.js
+    mv "$tmp_file" vite.config.js
     echo "Updated vite.config.js"
 else
     echo "Warning: vite.config.js not found"

@@ -71,7 +71,7 @@ Just run the bash commands below.
 
 1. First download (if you haven't already) [Git for Windows](https://gitforwindows.org) and install it.
 2. Open Git Bash and navigate to the theme directory.
-3. Run the following command below. After you completed the installation, you can use your preferred terminal again.
+3. Run the following commands below. After you completed the installation, you can use your preferred terminal again.
 
 ```bash
 chmod +x install.sh
