@@ -110,3 +110,20 @@ function allowed_block_types( $allowed_blocks, $editor_context ): array {
 }
 
 add_filter( 'allowed_block_types_all', 'allowed_block_types', 25, 2 );
+
+// Set local JSON save path for version control of ACF
+function local_acf_fields( $path ): string {
+    return get_stylesheet_directory() . '/resources/fields';
+}
+
+add_filter( 'acf/settings/save_json', 'local_acf_fields' );
+
+// Set local JSON loads path for version control of ACF
+function fields_load_point( $paths ) {
+    unset( $paths[0] );
+    $paths[] = get_stylesheet_directory() . '/resources/fields';
+
+    return $paths;
+}
+
+add_filter( 'acf/settings/load_json', 'fields_load_point' );
