@@ -70,7 +70,7 @@ Just run the bash commands below.
 #### ⊞ Windows (not tested yet):
 
 1. First download (if you haven't already) [Git for Windows](https://gitforwindows.org) and install it.
-2. Open Git Bash and navigate to the theme directory.
+2. Open Git Bash **<u>as administrator</u>** and navigate to the theme directory.
 3. Run the following commands below. After you completed the installation, you can use your preferred terminal again.
 
 ```bash

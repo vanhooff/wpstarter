@@ -133,9 +133,34 @@ fi
 # Rename theme directory and maintain correct path
 current_dir=${PWD##*/}
 if [ "$current_dir" = "wpstarter" ]; then
-    cd ..
-    mv wpstarter "$theme_name_lower"
-    cd "$theme_name_lower"
+    # First check if we have write permissions
+    if [ ! -w ".." ]; then
+        echo "Error: No write permissions in parent directory. Please run as administrator."
+        exit 1
+    fi
+
+    # Check if target directory already exists
+    if [ -d "../$theme_name_lower" ]; then
+        echo "Error: Target directory $theme_name_lower already exists"
+        exit 1
+    }
+
+    # Try to rename with error handling
+    if ! cd ..; then
+        echo "Error: Could not change to parent directory"
+        exit 1
+    fi
+
+    if ! mv -f "wpstarter" "$theme_name_lower"; then
+        echo "Error: Could not rename directory. Please ensure you have proper permissions."
+        exit 1
+    fi
+
+    if ! cd "$theme_name_lower"; then
+        echo "Error: Could not change to new theme directory"
+        exit 1
+    fi
+
     echo "Renamed theme directory to $theme_name_lower"
 fi
 
