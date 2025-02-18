@@ -143,7 +143,7 @@ if [ "$current_dir" = "wpstarter" ]; then
     if [ -d "../$theme_name_lower" ]; then
         echo "Error: Target directory $theme_name_lower already exists"
         exit 1
-    }
+    fi
 
     # Try to rename with error handling
     if ! cd ..; then
