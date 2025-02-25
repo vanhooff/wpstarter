@@ -192,10 +192,10 @@ if [ -d ".git" ]; then
     echo "Removed existing .git directory"
 fi
 
-git init
-git add .
-git commit -m "Initial commit"
-echo "Initialized new git repository with initial commit"
+#git init
+#git add .
+#git commit -m "Initial commit"
+#echo "Initialized new git repository with initial commit"
 
 
 # Remove default WordPress themes except the latest
