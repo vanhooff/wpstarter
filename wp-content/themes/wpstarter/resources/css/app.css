@@ -1,0 +1,93 @@
+@import '@splidejs/splide/dist/css/splide.min.css';
+@import './fonts.css';
+@import "tailwindcss";
+
+@source "../views/";
+@source "../../app/";
+
+@theme {
+  --font-body: "Body", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-heading: "Heading", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --animate-marquee: marquee 50s linear infinite;
+  --container-8xl: 1440px;
+  --breakpoint-xs: 420px;
+  --breakpoint-2xs: 360px;
+}
+
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+/* Better font rendering */
+.optimized-rendering {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* AlpineJs required */
+[x-cloak] {
+  @apply hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scroll-bar::-webkit-scrollbar {
+  @apply hidden;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scroll-bar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.rich-content {
+  @apply
+  text-pretty
+  prose
+  prose-strong:text-black
+  prose-headings:text-black
+  prose-p:text-gray-900
+  prose-ul:text-gray-900
+  prose-ol:text-gray-900
+  prose-a:text-gray-900
+  prose-a:underline
+  prose-a:underline-offset-4
+  prose-h1:lg:text-6xl
+  prose-h1:text-5xl
+  prose-h2:lg:text-5xl
+  prose-h2:text-4xl
+  prose-h3:lg:text-3xl
+  prose-h3:text-2xl
+  prose-headings:font-heading
+  prose-headings:first:mt-0
+  prose-headings:mb-5
+  prose-p:first:mt-0
+  prose-p:mb-4
+  prose-ol:list-decimal
+  prose-ul:list-disc
+  leading-normal
+  [&>*:first-child]:mt-0
+  [&>*:last-child]:mb-0
+  ;
+}
+
+body.admin-bar .sticky-header { /* if you have a sticky header */
+  @apply top-[32px];
+}
+
+@media (max-width: 782px) {
+
+  body.admin-bar #wpadminbar {
+    @apply hidden;
+  }
+
+
+  body.admin-bar .sticky-header { /* if you have a sticky header */
+    @apply top-0;
+  }
+
+  html, html:has(.admin-bar) {
+    @apply !mt-0;
+  }
+}
