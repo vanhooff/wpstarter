@@ -65,7 +65,7 @@ cd ..
 cd your-new-project-name/wp-content/themes/your-new-theme-name
 ```
 
-7. Open your browser and navigate to your-new-project-name.test and finish the installation of WordPress.
+7. Open your browser and navigate to https://your-new-project-name.test and finish the installation of WordPress.
 8. Activate ACF PRO and then activate the theme in the WordPress admin panel.
 9. Update the screenshot.png file in the theme directory with a screenshot of your theme. The image should be 1200x900 pixels and named `screenshot.png`. This image will be used as the theme preview in the WordPress admin panel.
 10. Return to your terminal and run the command below in your theme directory to start developing.
