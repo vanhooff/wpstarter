@@ -279,7 +279,7 @@ define( 'WP_CONTENT_URL', WP_HOME . '/wp-content' );
 // ** Environment Type ** //
 define( 'WP_ENVIRONMENT_TYPE', '$wp_environment' );
 
-/* That's all, stop editing! Happy publishing. */
+/* That\'s all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
