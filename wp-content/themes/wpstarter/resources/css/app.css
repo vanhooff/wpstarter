@@ -5,6 +5,9 @@
 @source "../views/";
 @source "../../app/";
 
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
 @theme {
   --font-body: InterVariable, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* Replace the these colors with your themes colors */
@@ -31,9 +34,6 @@
   /* Other custom properties */
   --animate-marquee: marquee 50s linear infinite;
 }
-
-@plugin "@tailwindcss/typography";
-@plugin "@tailwindcss/forms";
 
 /* Better font rendering */
 * {
