@@ -6,7 +6,6 @@
 
 namespace App;
 
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Vite;
 
 /**
@@ -36,7 +35,7 @@ add_filter( 'admin_head', function () {
         return;
     }
 
-    $dependencies = json_decode( Vite::content( '_editor.deps.json' ) );
+    $dependencies = json_decode(Vite::content('editor.deps.json'));
 
     foreach ( $dependencies as $dependency ) {
         if ( ! wp_script_is( $dependency ) ) {

@@ -1,6 +1,6 @@
 @import '@splidejs/splide/dist/css/splide.min.css';
 @import './fonts.css';
-@import "tailwindcss";
+@import "tailwindcss" theme(static);
 
 @source "../views/";
 @source "../../app/";

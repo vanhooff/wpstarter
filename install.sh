@@ -79,7 +79,7 @@ Text Domain:        sage
 License:            MIT License
 License URI:        https://opensource.org/licenses/MIT
 Requires PHP:       8.2
-Requires at least:  5.9
+Requires at least:  6.6
 */
 
 /*
@@ -101,14 +101,10 @@ if [ -f "vite.config.js" ]; then
     tmp_file=$(mktemp)
 
     cat > "$tmp_file" << EOF
-import {defineConfig} from 'vite'
+import {defineConfig} from 'vite';
 import tailwindcss from '@tailwindcss/vite';
-import laravel from 'laravel-vite-plugin'
-import {
-  wordpressPlugin,
-  wordpressRollupPlugin,
-  wordpressThemeJson,
-} from './resources/js/build/wordpress'
+import laravel from 'laravel-vite-plugin';
+import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 export default defineConfig({
   base: '/wp-content/themes/${theme_name_lower}/public/build/',
