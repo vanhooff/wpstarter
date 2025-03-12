@@ -30,15 +30,20 @@ WPStarter is a WordPress theme that is designed to be a starting point for new W
 
 ## Getting started
 
-1. Make sure you have a Wordpress installation ready with connected DB. Also install **ACF PRO** as we are going to use it for our blocks.
-2. Clone this repository into the `wp-content/themes` directory of your WordPress installation. You can do this by running the following command in your terminal:
+1. cd into your projects folder and clone this repository.
 
 ```bash
-cd /path/to/your/wordpress/installation/wp-content/themes
+cd /path/to/your/projects-folder
 ```
 
 ```bash
 git clone https://github.com/vanhooff/wpstarter.git
+```
+
+2. cd into the newly cloned repository.
+
+```bash
+cd wpstarter
 ```
 
 3. Install the required dependencies by running the following commands in the theme directory:
@@ -47,6 +52,12 @@ Change directory to the theme directory:
 
 ```bash
 cd wpstarter
+```
+4. Run the installation script:
+
+```bash
+chmod +x install.sh
+./install.sh
 ```
 
 Install composer dependencies:

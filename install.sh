@@ -39,6 +39,12 @@ echo "Enter local development domain (press Enter for '${theme_name_lower}.test'
 read local_domain
 local_domain="${local_domain:-${theme_name_lower}.test}"
 
+# Navigate to the theme directory
+cd wp-content/themes/wpstarter
+
+# composer install & npm install
+composer install
+npm install
 
 # Update style.css
 if [ -f "style.css" ]; then
@@ -186,36 +192,52 @@ else
     echo "Warning: npm is not installed"
 fi
 
+# cd to project root
+cd ../../..
+
 # Remove existing .git if present, then initialize fresh git repo
 if [ -d ".git" ]; then
     rm -rf .git
     echo "Removed existing .git directory"
 fi
 
-#git init
-#git add .
-#git commit -m "Initial commit"
-#echo "Initialized new git repository with initial commit"
-
-
-# Remove default WordPress themes except the latest
-echo "Removing default WordPress themes..."
-cd ..
-# Get the highest numbered theme using numeric comparison
-latest_theme=$(ls -d twenty* | while read theme; do
-    num=$(echo "$theme" | sed -E 's/twenty(twenty)?//' | sed 's/three/3/;s/four/4/;s/five/5/;s/six/6/;s/seven/7/;s/eight/8/;s/nine/9/')
-    echo "$num:$theme"
-done | sort -t: -k1,1n | tail -n1 | cut -d: -f2)
-
-# Remove all twenty* themes except the latest
-for theme in twenty*; do
-    if [ "$theme" != "$latest_theme" ]; then
-        rm -rf "$theme"
-        echo "Removed $theme"
+# rename the root folder
+current_dir=${PWD##*/}
+if [ "$current_dir" = "wpstarter" ]; then
+    # First check if we have write permissions
+    if [ ! -w ".." ]; then
+        echo "Error: No write permissions in parent directory. Please run as administrator."
+        exit 1
     fi
-done
-cd "$theme_name_lower"
-echo "Kept $latest_theme as fallback theme"
+
+    # Check if target directory already exists
+    if [ -d "../$theme_name_lower" ]; then
+        echo "Error: Target directory $theme_name_lower already exists"
+        exit 1
+    fi
+
+    # Try to rename with error handling
+    if ! cd ..; then
+        echo "Error: Could not change to parent directory"
+        exit 1
+    fi
+
+    if ! mv -f "wpstarter" "$theme_name_lower"; then
+        echo "Error: Could not rename directory. Please ensure you have proper permissions."
+        exit 1
+    fi
+
+    if ! cd "$theme_name_lower"; then
+        echo "Error: Could not change to new theme directory"
+        exit 1
+    fi
+
+    echo "Renamed theme directory to $theme_name_lower"
+fi
+
+echo "Theme rename complete!"
+echo "New theme name: $theme_name_title"
+echo "Theme directory: $theme_name_lower"
 
 
 # if theme name is not wpstarter, remove the install script
