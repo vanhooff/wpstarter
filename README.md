@@ -5,9 +5,6 @@ WPStarter is a WordPress theme that is designed to be a starting point for new W
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-  - [MacOS Installation](#macos)
-  - [Windows Installation](#-windows-not-tested-yet)
-
 - [Core Concepts](#core-concepts)
   - [Theme Architecture](#theme-architecture)
   - [Component Architecture](#component-architecture-using-laravel-blade-template-engine)
@@ -27,6 +24,9 @@ WPStarter is a WordPress theme that is designed to be a starting point for new W
     - [Component Functionality](#2-component-functionality)
     - [WordPress Integration Benefits](#3-wordpress-integration-benefits)
     - [Simple Example](#4-simple-example)
+
+## ⚠️ Prerequisites
+**This project and especially the installation script will require MacOS, using Windows will not work.**
 
 ## Getting started
 
@@ -53,40 +53,22 @@ chmod +x install.sh
 ./install.sh
 ```
 
-After the installation has finished. You can navigate to the newly renamed project folder.
+5. After the installation has finished cd out of the now renamed project folder.
 
 ```bash
 cd ..
 ```
 
-Then navigate to the newly created theme directory. The project folder and the theme folder will have the same name.
+6. Then navigate to the newly created theme directory. The project folder and the theme folder will have the same name.
 
 ```bash
 cd your-new-project-name/wp-content/themes/your-new-theme-name
 ```
 
-####  MacOS:
-
-Just run the bash commands below.
-
-#### ⊞ Windows (not tested yet):
-
-1. First download (if you haven't already) [Git for Windows](https://gitforwindows.org) and install it.
-2. Open Git Bash **<u>as administrator</u>** and navigate to the theme directory.
-3. Run the following commands below. After you completed the installation, you can use your preferred terminal again.
-
-```bash
-chmod +x install.sh
-./install.sh
-```
-
-This scripts will delete itself after running for security purposes.
-
-4. Update the screenshot.png file in the theme directory with a screenshot of your theme. The image should be 1200x900 pixels and named `screenshot.png`. This image will be used as the theme preview in the WordPress admin panel.
-
-5. Activate the theme in the WordPress admin panel.
-
-6. Now you can cd into the updated theme directory. Start developing by running the following command:
+7. Open your browser and navigate to your-new-project-name.test and finish the installation of WordPress.
+8. Activate ACF PRO and then activate the theme in the WordPress admin panel.
+9. Update the screenshot.png file in the theme directory with a screenshot of your theme. The image should be 1200x900 pixels and named `screenshot.png`. This image will be used as the theme preview in the WordPress admin panel.
+10. Return to your terminal and run the command below in your theme directory to start developing.
 
 ```bash
 npm run dev

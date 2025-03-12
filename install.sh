@@ -266,11 +266,11 @@ define( 'WP_MEMORY_LIMIT', '256M' );
 define( 'WP_MAX_MEMORY_LIMIT', '256M' );
 
 // ** Security settings ** //
-define( 'DISALLOW_FILE_EDIT', true );
-define( 'AUTOMATIC_UPDATER_DISABLED', true );
+define( 'DISALLOW_FILE_EDIT', false );
+define( 'AUTOMATIC_UPDATER_DISABLED', false );
 
 // ** Performance settings ** //
-define( 'WP_CACHE', true );
+define( 'WP_CACHE', false );
 
 // ** Custom Content Directory ** //
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
