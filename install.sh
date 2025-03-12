@@ -281,9 +281,16 @@ EOF
 )
 
 echo "Generating wp-config.php..."
-generate_wp_config
+# Generate salts
+AUTH_KEY=$(openssl rand -base64 48 | tr -d '\n')
+SECURE_AUTH_KEY=$(openssl rand -base64 48 | tr -d '\n')
+LOGGED_IN_KEY=$(openssl rand -base64 48 | tr -d '\n')
+NONCE_KEY=$(openssl rand -base64 48 | tr -d '\n')
+AUTH_SALT=$(openssl rand -base64 48 | tr -d '\n')
+SECURE_AUTH_SALT=$(openssl rand -base64 48 | tr -d '\n')
+LOGGED_IN_SALT=$(openssl rand -base64 48 | tr -d '\n')
+NONCE_SALT=$(openssl rand -base64 48 | tr -d '\n')
 echo "$WP_CONFIG_CONTENT" > "wp-config.php"
-echo "wp-config.php has been created successfully!"
 
 
 # Remove existing .git if present, then initialize fresh git repo
