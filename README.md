@@ -30,7 +30,7 @@ WPStarter is a WordPress theme that is designed to be a starting point for new W
 
 ## Getting started
 
-1. cd into your projects folder and clone this repository.
+1. Make sure you have created a new DB and have the credentials ready. Navigate into your Projects/Herd folder and clone this repository.
 
 ```bash
 cd /path/to/your/projects-folder
@@ -40,19 +40,12 @@ cd /path/to/your/projects-folder
 git clone https://github.com/vanhooff/wpstarter.git
 ```
 
-2. cd into the newly cloned repository.
+2. Navigate into the newly cloned repository.
 
 ```bash
 cd wpstarter
 ```
 
-3. Install the required dependencies by running the following commands in the theme directory:
-
-Change directory to the theme directory:
-
-```bash
-cd wpstarter
-```
 4. Run the installation script:
 
 ```bash
@@ -60,19 +53,17 @@ chmod +x install.sh
 ./install.sh
 ```
 
-Install composer dependencies:
+After the installation has finished. You can navigate to the newly renamed project folder.
 
 ```bash
-composer install
+cd ..
 ```
 
-Install npm dependencies. You can also use yarn if you prefer.
+Then navigate to the newly created theme directory. The project folder and the theme folder will have the same name.
 
 ```bash
-npm install
+cd your-new-project-name/wp-content/themes/your-new-theme-name
 ```
-
-Run the script to change the naming of the theme to your theme name:
 
 ####  MacOS:
 
