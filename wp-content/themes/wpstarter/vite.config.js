@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     laravel({
-      detectTls: 'example.test', // Change this to your local development domain for SSL usage during development
+      detectTls: 'wpstarter.test', // Change this to your local development domain for SSL usage during development
       input: [
         'resources/css/app.css',
         'resources/js/app.js',

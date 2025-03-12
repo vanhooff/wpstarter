@@ -6,10 +6,27 @@
 @source "../../app/";
 
 @theme {
-  --font-body: "Body", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-heading: "Heading", system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-body: InterVariable, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --animate-marquee: marquee 50s linear infinite;
+  /* we use the neutral gray palette from https://tailwindcss.com/docs/colors */
+  --color-gray-50: oklch(0.985 0 0);
+  --color-gray-100: oklch(0.97 0 0);
+  --color-gray-200: oklch(0.922 0 0);
+  --color-gray-300: oklch(0.87 0 0);
+  --color-gray-400: oklch(0.708 0 0);
+  --color-gray-500: oklch(0.556 0 0);
+  --color-gray-600: oklch(0.439 0 0);
+  --color-gray-700: oklch(0.371 0 0);
+  --color-gray-800: oklch(0.269 0 0);
+  --color-gray-900: oklch(0.205 0 0);
+  --color-gray-950: oklch(0.145 0 0);
+  /* Replace the these colors with your themes colors */
+  --color-primary: '#0071e3';
+  --color-secondary: '#f6f8f2';
+  /* Extent the default tailwindcss container sizes*/
   --container-8xl: 1440px;
+  --container-9xl: 1600px;
+  /* Add extra breakpoints */
   --breakpoint-xs: 420px;
   --breakpoint-2xs: 360px;
 }
@@ -18,7 +35,7 @@
 @plugin "@tailwindcss/forms";
 
 /* Better font rendering */
-.optimized-rendering {
+* {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
@@ -41,25 +58,28 @@
   scrollbar-width: none; /* Firefox */
 }
 
+/* Use the rich-content class on the parent div where you echo your WYSIWYG field */
 .rich-content {
   @apply
   text-pretty
-  prose
+  prose-lg
   prose-strong:text-black
   prose-headings:text-black
-  prose-p:text-gray-900
-  prose-ul:text-gray-900
-  prose-ol:text-gray-900
-  prose-a:text-gray-900
+  prose-p:text-gray-800
+  prose-ul:text-gray-800
+  prose-ol:text-gray-800
+  prose-a:text-gray-800
   prose-a:underline
   prose-a:underline-offset-4
   prose-h1:lg:text-6xl
   prose-h1:text-5xl
-  prose-h2:lg:text-5xl
+  prose-h2:lg:text-[40px]
   prose-h2:text-4xl
   prose-h3:lg:text-3xl
   prose-h3:text-2xl
-  prose-headings:font-heading
+  prose-headings:font-body
+  prose-headings:font-bold
+  prose-headings:first:text-black
   prose-headings:first:mt-0
   prose-headings:mb-5
   prose-p:first:mt-0
