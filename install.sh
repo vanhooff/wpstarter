@@ -122,7 +122,6 @@ export default defineConfig({
     }),
 
     wordpressPlugin(),
-    wordpressRollupPlugin(),
 
     wordpressThemeJson({
       disableTailwindColors: false,
