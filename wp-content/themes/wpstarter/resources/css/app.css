@@ -7,11 +7,10 @@
 
 @theme {
   --font-body: InterVariable, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --animate-marquee: marquee 50s linear infinite;
   /* Replace the these colors with your themes colors */
   --color-primary: '#0071e3';
   --color-secondary: '#f6f8f2';
-  /* we use the neutral gray palette from https://tailwindcss.com/docs/colors */
+  /* we use the neutral gray palette from https://tailwindcss.com/docs/colors as default */
   --color-gray-50: oklch(0.985 0 0);
   --color-gray-100: oklch(0.97 0 0);
   --color-gray-200: oklch(0.922 0 0);
@@ -29,6 +28,8 @@
   /* Add extra breakpoints */
   --breakpoint-xs: 420px;
   --breakpoint-2xs: 360px;
+  /* Other custom properties */
+  --animate-marquee: marquee 50s linear infinite;
 }
 
 @plugin "@tailwindcss/typography";
