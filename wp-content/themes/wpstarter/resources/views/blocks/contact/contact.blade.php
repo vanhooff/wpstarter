@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-secondary rounded-b-3xl p-8">
+    <div class="bg-secondary rounded-b-3xl p-6 sm:p-8">
       <div class="lg:grid grid-cols-3">
         <div class="lg:flex justify-center">
           <div class="flex items-start">

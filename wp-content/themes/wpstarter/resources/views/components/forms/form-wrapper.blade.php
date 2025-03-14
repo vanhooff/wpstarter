@@ -37,7 +37,7 @@
     <div class="sm:flex sm:justify-start mt-6">
       <button
         type="submit"
-        class="group relative w-full md:w-auto min-w-[260px] group font-medium !no-underline inline-flex flex-none items-center justify-center overflow-hidden rounded-md transition-all duration-100 h-8 sm:h-10 px-4 sm:px-6 text-base text-white bg-primary hover:bg-primary/90 border-primary shadow-none"
+        class="group relative w-full md:w-auto min-w-[260px] group font-medium !no-underline inline-flex flex-none items-center justify-center overflow-hidden rounded-md transition-all duration-100 h-10 px-4 sm:px-6 text-base text-white bg-primary hover:bg-primary/90 border-primary shadow-none"
         @click="errorMessage = ''"
         :disabled="submitting"
       >
