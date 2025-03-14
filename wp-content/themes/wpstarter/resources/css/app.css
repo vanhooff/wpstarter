@@ -65,6 +65,7 @@
   prose
   text-pretty
   sm:text-lg
+  max-w-full
   prose-strong:text-black
   prose-headings:text-primary
   prose-headings:first:text-primary
