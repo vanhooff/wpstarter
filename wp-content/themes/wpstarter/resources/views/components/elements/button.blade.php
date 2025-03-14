@@ -3,18 +3,18 @@
   $modeClasses = [
     'normal' => [
       'text' => 'text-white',
-      'bg' => 'bg-black hover:bg-black/90',
-      'border' => 'border-black',
+      'bg' => 'bg-primary hover:bg-primary/90',
+      'border' => 'border-primary',
       'shadow' => 'shadow-none'
     ],
     'outline' => [
-      'text' => 'text-black hover:text-white',
-      'bg' => 'bg-transparent hover:bg-black',
-      'border' => 'border border-black',
+      'text' => 'text-primary hover:text-white',
+      'bg' => 'bg-transparent hover:bg-primary',
+      'border' => 'border border-primary',
       'shadow' => 'shadow-none'
     ],
     'ghost' => [
-      'text' => 'text-black',
+      'text' => 'text-primary',
       'bg' => 'bg-transparent',
       'border' => 'border-transparent',
       'shadow' => 'shadow-none'
@@ -34,7 +34,7 @@
   $size = $size ?? 'base';
   $sizeClass = $sizeClasses[$size] ?? $sizeClasses['base'];
 
-  $fullWidthClass = $fullWidth ?? false ? 'w-full' : 'w-auto';
+  $fullWidthClass = $fullWidth ?? false ? 'w-full' : 'w-full sm:w-auto';
 
 $commonClasses = "
     group
@@ -45,7 +45,7 @@ $commonClasses = "
     items-center
     justify-center
     overflow-hidden
-    rounded-lg
+    rounded-md
     transition-all duration-100
     {$sizeClass}
     {$modeClass['text']}

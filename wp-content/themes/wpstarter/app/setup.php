@@ -35,7 +35,7 @@ add_filter( 'admin_head', function () {
         return;
     }
 
-    $dependencies = json_decode(Vite::content('editor.deps.json'));
+    $dependencies = json_decode( Vite::content( 'editor.deps.json' ) );
 
     foreach ( $dependencies as $dependency ) {
         if ( ! wp_script_is( $dependency ) ) {
@@ -107,7 +107,11 @@ add_action( 'after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus( [
-        'primary_navigation' => __( 'Primary Navigation', 'sage' ),
+        'primary_navigation'  => __( 'Primary Navigation', 'sage' ),
+        'footer_navigation_1' => __( 'Footer Navigation 1', 'sage' ),
+        'footer_navigation_2' => __( 'Footer Navigation 2', 'sage' ),
+        'footer_navigation_3' => __( 'Footer Navigation 3', 'sage' ),
+        'footer_navigation_4' => __( 'Footer Navigation 4', 'sage' ),
     ] );
 
     /**

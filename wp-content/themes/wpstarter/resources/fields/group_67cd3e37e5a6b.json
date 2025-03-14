@@ -1,10 +1,10 @@
 {
-    "key": "group_65f448679eb06",
-    "title": "Block - Paragraaf",
+    "key": "group_67cd3e37e5a6b",
+    "title": "Block - Buttons",
     "fields": [
         {
-            "key": "field_65f44867a1b12",
-            "label": "Paragraaf",
+            "key": "field_67cd3e37e8202",
+            "label": "Buttons",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,7 +21,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_67b72a041262d",
+            "key": "field_67cd3e37e820a",
             "label": "Opties",
             "name": "",
             "aria-label": "",
@@ -39,7 +39,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_65f44867a1b21",
+            "key": "field_67cd3fd0d7694",
             "label": "Uitlijning",
             "name": "alignment",
             "aria-label": "",
@@ -54,55 +54,17 @@
             },
             "choices": {
                 "left": "Links",
-                "center": "Middel"
+                "center": "Middel",
+                "right": "Rechts"
             },
             "default_value": "left",
             "return_format": "value",
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "layout": "horizontal"
         },
         {
-            "key": "field_65f94211b7cf7",
-            "label": "Smalle container",
-            "name": "narrow_container",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_6638ebcceca19",
-            "label": "Content",
-            "name": "content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_67d3d58d313f3",
+            "key": "field_67cd3e37e8223",
             "label": "Buttons",
             "name": "buttons_component",
             "aria-label": "",
@@ -129,7 +91,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/paragraph"
+                "value": "acf\/buttons"
             }
         ]
     ],
@@ -142,5 +104,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741936028
+    "modified": 1741936014
 }

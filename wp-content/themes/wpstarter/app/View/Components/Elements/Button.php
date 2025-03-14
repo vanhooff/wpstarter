@@ -1,6 +1,6 @@
 <?php
 
-namespace app\View\Components;
+namespace app\View\Components\Elements;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -31,6 +31,6 @@ class Button extends Component {
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string {
-        return view( 'components.button', [ 'size' => $this->size ] );
+        return view( 'components.elements.button', [ 'size' => $this->size ] );
     }
 }

@@ -11,8 +11,8 @@
 @theme {
   --font-body: InterVariable, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* Replace the these colors with your themes colors */
-  --color-primary: '#0071e3';
-  --color-secondary: '#f6f8f2';
+  --color-primary: #23563e;
+  --color-secondary: #96d247;
   /* we use the neutral gray palette from https://tailwindcss.com/docs/colors as default */
   --color-gray-50: oklch(0.985 0 0);
   --color-gray-100: oklch(0.97 0 0);
@@ -65,22 +65,24 @@
   text-pretty
   prose-lg
   prose-strong:text-black
-  prose-headings:text-black
+  prose-headings:text-primary
+  prose-headings:first:text-primary
   prose-p:text-gray-800
   prose-ul:text-gray-800
   prose-ol:text-gray-800
   prose-a:text-gray-800
   prose-a:underline
   prose-a:underline-offset-4
-  prose-h1:lg:text-6xl
-  prose-h1:text-5xl
-  prose-h2:lg:text-[40px]
-  prose-h2:text-4xl
+  prose-h1:lg:text-4xl
+  prose-h1:text-3xl
+  prose-h2:lg:text-4xl
+  prose-h2:text-3xl
   prose-h3:lg:text-3xl
   prose-h3:text-2xl
+  prose-h4:lg:text-2xl
+  prose-h4:text-xl
   prose-headings:font-body
   prose-headings:font-bold
-  prose-headings:first:text-black
   prose-headings:first:mt-0
   prose-headings:mb-5
   prose-p:first:mt-0
@@ -97,7 +99,7 @@ body.admin-bar .sticky-header { /* if you have a sticky header */
   @apply top-[32px];
 }
 
-@media (max-width: 782px) {
+@media (max-width: 1024px) {
 
   body.admin-bar #wpadminbar {
     @apply hidden;
