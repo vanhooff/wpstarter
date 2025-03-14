@@ -86,7 +86,7 @@
                    x-transition:leave-start="opacity-100"
                    x-transition:leave-end="opacity-100"
                    style="transition-delay:{{ ($loop->iteration + 1) * 90 }}ms;"
-                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50 !no-underline hover:text-primary transition-colors duration-300 {{ $navMenuItem['is_current'] ? 'text-primary' : 'text-gray-900' }}">
+                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50 !no-underline hover:text-primary duration-300 {{ $navMenuItem['is_current'] ? 'text-primary' : 'text-gray-900' }}">
                   {{ $navMenuItem['label'] }}
                 </a>
               @endforeach
