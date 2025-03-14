@@ -11,7 +11,7 @@
   $longitude = get_field('longitude', 'options');
   $opening_hours = get_field('opening_hours', 'options');
 @endphp
-<div class="relative px-6 pb-12 bg-primary lg:px-12">
+<div class="relative px-6 pt-2 pb-12 bg-primary lg:px-12">
 
   <div class="relative mx-auto max-w-3xl flex-wrap justify-between text-lg text-white xs:flex lg:max-w-7xl lg:flex-none">
 
