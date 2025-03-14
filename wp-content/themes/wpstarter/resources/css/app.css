@@ -62,8 +62,9 @@
 /* Use the rich-content class on the parent div where you echo your WYSIWYG field */
 .rich-content {
   @apply
+  prose
   text-pretty
-  prose-lg
+  sm:text-lg
   prose-strong:text-black
   prose-headings:text-primary
   prose-headings:first:text-primary
