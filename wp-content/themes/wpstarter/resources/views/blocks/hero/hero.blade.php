@@ -64,4 +64,14 @@
 
   </div>
 
+  <div x-data class="absolute inset-x-0 bottom-0 z-10 -mb-6 sm:-mb-7 flex justify-center">
+    <button @click="$el.closest('section').nextElementSibling.scrollIntoView({ behavior: 'smooth' })"
+            class="flex h-12 sm:h-14 w-12 sm:w-14 items-center justify-center rounded-full text-white bg-primary hover:text-white/80">
+      <span class="sr-only">Scroll naar beneden</span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 mt-0.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
+    </button>
+  </div>
+
 </section>

@@ -18,6 +18,8 @@
     {{ __('Skip to content', 'sage') }}
   </a>
 
+  @include('components.elements.topper')
+
   <header>
     @include('sections.header')
   </header>

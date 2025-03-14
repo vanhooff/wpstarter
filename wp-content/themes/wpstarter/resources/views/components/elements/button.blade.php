@@ -51,10 +51,10 @@
     : ($modeClasses[$mode] ?? $modeClasses['normal']);
 
   $sizeClasses = [
-    'xs' => 'h-6 px-2 text-xs',
-    'sm' => 'h-7 px-2 text-sm',
-    'base' => 'h-9 px-4 text-base',
-    'lg' => 'h-9 px-4 text-base lg:h-12 lg:px-6 lg:text-lg',
+    'xs' => 'h-6 px-2 text-xs min-w-[140px]',
+    'sm' => 'h-7 px-2 text-sm min-w-[160px]',
+    'base' => 'h-10 px-6 text-base min-w-[180px]',
+    'lg' => 'h-9 px-4 text-base lg:h-12 lg:px-6 lg:text-lg min-w-[200px]',
   ];
 
   $size = $size ?? 'base';
@@ -72,6 +72,7 @@ $commonClasses = "
     justify-center
     overflow-hidden
     rounded-md
+    cursor-pointer
     transition-all duration-100
     {$sizeClass}
     {$modeClass['text']}

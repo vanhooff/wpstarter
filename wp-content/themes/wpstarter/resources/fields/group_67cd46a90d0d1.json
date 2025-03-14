@@ -1,10 +1,10 @@
 {
-    "key": "group_66efd4dd2f3f3",
-    "title": "Block - Hero Slider",
+    "key": "group_67cd46a90d0d1",
+    "title": "Block - Banner Afbeelding",
     "fields": [
         {
-            "key": "field_66efd4ddfe919",
-            "label": "Hero Slider",
+            "key": "field_67cd46a90fe81",
+            "label": "Banner",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,8 +21,8 @@
             "esc_html": 0
         },
         {
-            "key": "field_66efe318a9305",
-            "label": "Edit Slides",
+            "key": "field_67cd46a90fe8a",
+            "label": "Opties",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -39,13 +39,13 @@
             "endpoint": 0
         },
         {
-            "key": "field_67c81a2354e29",
-            "label": "Slides",
-            "name": "slides",
+            "key": "field_67cd46a90fea8",
+            "label": "Afbeelding",
+            "name": "image",
             "aria-label": "",
-            "type": "gallery",
+            "type": "image",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -54,9 +54,6 @@
             },
             "return_format": "array",
             "library": "all",
-            "translations": "sync",
-            "min": 4,
-            "max": 16,
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -64,7 +61,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "insert": "append",
+            "allow_in_bindings": 0,
             "preview_size": "medium"
         }
     ],
@@ -73,7 +70,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/hero-slider"
+                "value": "acf\/banner"
             }
         ]
     ],
@@ -86,5 +83,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741949261
+    "modified": 1741956607
 }

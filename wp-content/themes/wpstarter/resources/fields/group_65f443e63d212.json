@@ -1,10 +1,10 @@
 {
-    "key": "group_65f448679eb06",
-    "title": "Block - Paragraaf",
+    "key": "group_65f443e63d212",
+    "title": "Block - About Feature",
     "fields": [
         {
-            "key": "field_65f44867a1b12",
-            "label": "Paragraaf",
+            "key": "field_65f443e6405ff",
+            "label": "About Feature",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,7 +21,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_67b72a041262d",
+            "key": "field_67cd3d61dfe78",
             "label": "Opties",
             "name": "",
             "aria-label": "",
@@ -39,7 +39,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_65f44867a1b21",
+            "key": "field_65f44406f0c58",
             "label": "Uitlijning",
             "name": "alignment",
             "aria-label": "",
@@ -48,13 +48,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "choices": {
                 "left": "Links",
-                "center": "Middel"
+                "right": "Rechts"
             },
             "default_value": "left",
             "return_format": "value",
@@ -63,57 +63,16 @@
             "layout": "horizontal"
         },
         {
-            "key": "field_65f94211b7cf7",
-            "label": "Smalle container",
-            "name": "narrow_container",
+            "key": "field_67b482f16c07e",
+            "label": "Background color",
+            "name": "background_color",
             "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 1,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
-            "key": "field_6638ebcceca19",
-            "label": "Content",
-            "name": "content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_67d425747d61c",
-            "label": "Achtergrond? (copy)",
-            "name": "has_background_copy",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -125,7 +84,54 @@
             "ui": 1
         },
         {
-            "key": "field_67d3d58d313f3",
+            "key": "field_65f443e640617",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_65f443e64061f",
+            "label": "Titel en content",
+            "name": "title_content",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_65f07155cd202"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_65f443e640623",
             "label": "Buttons",
             "name": "buttons_component",
             "aria-label": "",
@@ -152,7 +158,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/paragraph"
+                "value": "acf\/about-feature"
             }
         ]
     ],
@@ -165,5 +171,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741956506
+    "modified": 1741956629
 }

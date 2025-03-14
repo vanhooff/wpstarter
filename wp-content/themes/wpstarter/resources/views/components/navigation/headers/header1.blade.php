@@ -20,7 +20,7 @@
       <div class="hidden xs:flex lg:gap-x-12 order-1 lg:order-2">
         <div class="hidden lg:flex lg:gap-x-12">
           @foreach($navMenuItems['items'] as $navMenuItem)
-            <a href="{{ $navMenuItem['url'] }}" class="text-base/9 font-medium !no-underline {{ $navMenuItem['is_current'] ? 'text-primary' : 'text-gray-900' }}">{{ $navMenuItem['label'] }}</a>
+            <a href="{{ $navMenuItem['url'] }}" class="text-base/9 font-medium !no-underline hover:text-primary transition-colors duration-300 {{ $navMenuItem['is_current'] ? 'text-primary' : 'text-gray-900' }}">{{ $navMenuItem['label'] }}</a>
           @endforeach
         </div>
 
@@ -86,7 +86,7 @@
                    x-transition:leave-start="opacity-100"
                    x-transition:leave-end="opacity-100"
                    style="transition-delay:{{ ($loop->iteration + 1) * 90 }}ms;"
-                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50 !no-underline {{ $navMenuItem['is_current'] ? 'text-primary' : 'text-gray-900' }}">
+                   class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50 !no-underline hover:text-primary transition-colors duration-300 {{ $navMenuItem['is_current'] ? 'text-primary' : 'text-gray-900' }}">
                   {{ $navMenuItem['label'] }}
                 </a>
               @endforeach
