@@ -17,7 +17,7 @@
     <div class="absolute inset-0 bg-primary/40"></div>
 
     @if(get_field('title') || get_field('content') || have_rows('buttons'))
-      <div class="relative py-32 lg:py-48 px-6 lg:px-12">
+      <div class="relative py-24 sm:py-32 lg:py-48 px-6 lg:px-12">
 
         <div class="max-w-7xl mx-auto">
 
