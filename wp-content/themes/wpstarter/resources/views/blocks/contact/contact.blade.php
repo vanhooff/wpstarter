@@ -20,7 +20,7 @@
             <img class="h-full w-full object-cover" src="{{ $image['url'] }}" alt="{{ $image['alt'] }}">
           </div>
         </div>
-        <div class="px-12 py-8">
+        <div class="px-6 sm:px-12 py-8">
           <h2 class="mb-8 text-4xl font-bold tracking-tight {{ $black_title ? '' : 'text-primary' }}">
             Vragen?<br>
             Neem contact met ons op.
