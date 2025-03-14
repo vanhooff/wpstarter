@@ -23,6 +23,7 @@
                 $buttonLink = get_sub_field('button_link');
                 $buttonSize = get_sub_field('size');
                 $outline = get_sub_field('outline') ? 'outline' : 'normal';
+                $invert = get_sub_field('invert');
                 $newTab = get_sub_field('new_tab');
               @endphp
               <x-elements.button
@@ -31,6 +32,7 @@
                 :mode="$outline"
                 buttonType="link"
                 :newTab="$newTab"
+                :invert="$invert"
                 :fullWidth="false"
               >
                 {{ $buttonText }}

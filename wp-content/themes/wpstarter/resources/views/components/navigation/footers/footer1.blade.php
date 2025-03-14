@@ -99,7 +99,7 @@
             @foreach($navMenuItemsColumn1['items'] as $item)
               <li>
                 <a href="{{ $item['url'] }}"
-                   class="!no-underline"
+                   class="!no-underline opacity-75 hover:opacity-100 transition-opacity duration-300"
                 >
                   {{ $item['label'] }}
                 </a>
@@ -125,7 +125,7 @@
             @foreach($navMenuItemsColumn2['items'] as $item)
               <li>
                 <a href="{{ $item['url'] }}"
-                   class="!no-underline"
+                   class="!no-underline opacity-75 hover:opacity-100 transition-opacity duration-300"
                 >
                   {{ $item['label'] }}
                 </a>
@@ -151,7 +151,7 @@
             @foreach($navMenuItemsColumn3['items'] as $item)
               <li>
                 <a href="{{ $item['url'] }}"
-                   class="!no-underline"
+                   class="!no-underline opacity-75 hover:opacity-100 transition-opacity duration-300"
                 >
                   {{ $item['label'] }}
                 </a>

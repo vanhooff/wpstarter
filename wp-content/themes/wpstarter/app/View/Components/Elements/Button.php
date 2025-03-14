@@ -20,6 +20,7 @@ class Button extends Component {
         public ?bool $newTab = false,
         public ?string $buttonType = 'button',
         public ?string $mode = 'normal',
+        public ?bool $invert = false,
         public ?bool $fullWidth = false
     ) {
         $this->size = in_array( $this->size, [ 'xs', 'sm', 'base', 'lg' ] ) ? $this->size : 'base';
