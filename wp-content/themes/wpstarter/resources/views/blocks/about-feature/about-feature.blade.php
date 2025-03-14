@@ -20,16 +20,16 @@
 
     <div class="relative flex items-center {{ $alignment === 'right' ? 'order-2 md:order-1' : 'order-2'}}">
       <div class="w-full">
-        @if($title)
-          <h2 class="mb-4 text-4xl font-bold text-primary lg:text-[40px]">
-            {{ $title }}
-          </h2>
-        @endif
-        @if($content)
-          <div class="rich-content">
+        <div class="rich-content">
+          @if($title)
+            <h2>
+              {{ $title }}
+            </h2>
+          @endif
+          @if($content)
             {!! $content !!}
-          </div>
-        @endif
+          @endif
+        </div>
         @if( have_rows('buttons') )
           <div class="mt-8 sm:flex max-w-7xl mx-auto {{ $alignment === 'center' ? 'justify-center' : ( $alignment === 'right' ? 'justify-end' : 'justify-start' ) }}">
             <div class="block space-y-4 sm:space-y-0 sm:space-x-4 sm:flex">
