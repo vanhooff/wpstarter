@@ -2,7 +2,7 @@
 
 # Function to convert string to lowercase
 tolower() {
-    echo "$1" | tr '[:upper:]' '[:lower:]'
+    echo "$1" | tr '[:upper:]' '[:lower:]' | tr -d '- '
 }
 
 # Function to convert string to uppercase
