@@ -11,8 +11,8 @@
 @theme {
   --font-body: InterVariable, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* Replace the these colors with your themes colors */
-  --color-primary: #23563e;
-  --color-secondary: #e6eeec;
+  --color-primary: #191919;
+  --color-secondary: #fafafa;
   /* we use the neutral gray palette from https://tailwindcss.com/docs/colors as default */
   --color-gray-50: oklch(0.985 0 0);
   --color-gray-100: oklch(0.97 0 0);

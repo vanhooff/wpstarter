@@ -3,7 +3,7 @@
 >
   <nav class="mx-auto flex max-w-7xl items-center justify-between py-4 lg:py-6" aria-label="Global">
     <div class="-m-1.5 p-1.5 text-primary">
-      <a href="{{ home_url('/') }}" class="w-20 sm:w-24 block">
+      <a href="{{ home_url('/') }}" class="w-36 sm:w-40 block">
         <x-elements.logo/>
         <span class="sr-only">{{ get_bloginfo('name') }}</span>
       </a>
@@ -17,7 +17,7 @@
           </svg>
         </button>
       </div>
-      <div class="hidden xs:flex lg:gap-x-12 order-1 lg:order-2">
+      <div class="hidden sm:flex lg:gap-x-12 order-1 lg:order-2">
         <div class="hidden lg:flex lg:gap-x-12">
           @foreach($navMenuItems['items'] as $navMenuItem)
             <a href="{{ $navMenuItem['url'] }}" class="text-base/9 font-medium !no-underline hover:text-primary transition-colors duration-300 {{ $navMenuItem['is_current'] ? 'text-primary' : 'text-gray-900' }}">{{ $navMenuItem['label'] }}</a>
@@ -61,7 +61,7 @@
       >
         <div class="flex items-center justify-between">
           <div class="-m-1.5 p-1.5 text-primary">
-            <a href="{{ home_url('/') }}" class="w-20 block">
+            <a href="{{ home_url('/') }}" class="w-36 block">
               <x-elements.logo/>
               <span class="sr-only">{{ get_bloginfo('name') }}</span>
             </a>
