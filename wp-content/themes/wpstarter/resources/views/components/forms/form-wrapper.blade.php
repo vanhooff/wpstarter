@@ -28,7 +28,7 @@
     </div>
 
     <div>
-      <input type="hidden" name="action" value="menzsamen_form">
+      <input type="hidden" name="action" value="default_form">
       <input type="hidden" name="send_to" value="{{ $sendTo }}">
       <input type="hidden" name="subject" value="{!! $subject !!}">
       <input type="hidden" name="success_message" value="{!! $successMessage !!}">

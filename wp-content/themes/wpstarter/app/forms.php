@@ -1,7 +1,7 @@
 <?php
 function get_allowed_emails() {
     $allowed_emails = [ // addresses ending with default.nl are whitelisted by default
-        'info@onlineklik.nl',
+        'mail@sandervanhooff.com',
     ];
 
     return array_unique( $allowed_emails );

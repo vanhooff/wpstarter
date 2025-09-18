@@ -172,12 +172,12 @@
       <span>&copy; {{ date('Y') }} {{ get_bloginfo('name') }}</span>
       <span>|</span>
       <span>Design by
-      <a href="https://www.onlineklik.nl"
+      <a href="https://vuewer.com"
          target="_blank"
          rel="noopener noreferrer"
          class="text-white !no-underline"
       >
-        Online Klik
+        Vuewer
       </a>
       </span>
     </div>

@@ -21,14 +21,14 @@ read theme_name
 theme_name="${theme_name:-My Awesome Theme}"
 
 # Ask for the author name
-echo "Enter author name (press Enter for 'Online Klik B.V.'):"
+echo "Enter author name (press Enter for 'Vuewer'):"
 read author_name
-author_name="${author_name:-Online Klik B.V.}"
+author_name="${author_name:-Vuewer}"
 
 # Ask for the theme URI
-echo "Enter author URI (press Enter for 'https://www.onlineklik.nl'):"
+echo "Enter author URI (press Enter for 'https://vuewer.com'):"
 read theme_uri
-theme_uri="${theme_uri:-https://www.onlineklik.nl}"
+theme_uri="${theme_uri:-https://vuewer.com}"
 
 # Convert theme name to different formats
 theme_name_lower=$(tolower "${theme_name// /}")
