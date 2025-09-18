@@ -18,7 +18,7 @@
     <div class="mt-12 w-full sm:w-[50%] lg:w-auto">
       <div>
         <div class="-m-1.5 p-1.5">
-          <a href="{{ home_url('/') }}" class="w-20 sm:w-24 block">
+          <a href="{{ home_url('/') }}" class="w-36 sm:w-40 block">
             <x-elements.logo/>
             <span class="sr-only">{{ get_bloginfo('name') }}</span>
           </a>
