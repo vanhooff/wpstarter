@@ -1,4 +1,11 @@
 <?php
+
+function get_form_from_email() {
+    // Configurable from email address
+    return 'noreply@default.nl';
+}
+
+
 function get_allowed_emails() {
     $allowed_emails = [ // addresses ending with default.nl are whitelisted by default
         'mail@sandervanhooff.com',
@@ -42,8 +49,9 @@ function handle_default_form() {
 
             if ( $key === 'email' ) {
                 $field_value = sanitize_email( $value );
+                $from_email  = get_form_from_email();
                 $headers     = array(
-                    'From: ' . $field_value,
+                    'From: ' . $from_email,
                     'Reply-To: ' . $field_value
                 );
                 $headers     = implode( "\r\n", $headers ) . "\r\n";
