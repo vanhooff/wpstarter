@@ -78,7 +78,7 @@ Author URI:         ${theme_uri}
 Text Domain:        sage
 License:            MIT License
 License URI:        https://opensource.org/licenses/MIT
-Requires PHP:       8.2
+Requires PHP:       8.3
 Requires at least:  6.6
 */
 
@@ -106,6 +106,10 @@ import tailwindcss from '@tailwindcss/vite';
 import laravel from 'laravel-vite-plugin';
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
+// Set APP_URL if it doesn't exist for Laravel Vite plugin
+if (!process.env.APP_URL) {
+  process.env.APP_URL = 'http://${local_domain}';
+}
 export default defineConfig({
   base: '/wp-content/themes/${theme_name_lower}/public/build/',
   plugins: [
@@ -119,6 +123,7 @@ export default defineConfig({
         'resources/js/editor.js',
       ],
       refresh: true,
+      assets: ['resources/images/**', 'resources/fonts/**'],
     }),
 
     wordpressPlugin(),
@@ -127,6 +132,7 @@ export default defineConfig({
       disableTailwindColors: false,
       disableTailwindFonts: false,
       disableTailwindFontSizes: false,
+      disableTailwindBorderRadius: false,
     }),
   ],
   resolve: {
