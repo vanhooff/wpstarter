@@ -1,8 +1,4 @@
-import.meta.glob([
-  '../images/**',
-  '../fonts/**',
-])
-import {Splide} from '@splidejs/splide'
+import { Splide } from '@splidejs/splide'
 import collapse from '@alpinejs/collapse'
 import focus from '@alpinejs/focus'
 import ui from '@alpinejs/ui'
