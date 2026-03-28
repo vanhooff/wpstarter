@@ -108,7 +108,7 @@ import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 // Set APP_URL if it doesn't exist for Laravel Vite plugin
 if (!process.env.APP_URL) {
-  process.env.APP_URL = 'http://${local_domain}';
+  process.env.APP_URL = 'https://${local_domain}';
 }
 export default defineConfig({
   base: '/wp-content/themes/${theme_name_lower}/public/build/',
